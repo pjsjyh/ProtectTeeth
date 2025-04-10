@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea3e3645e752054b9b71593f2633271, type: 3}
+  m_Name: RoundCollection
+  m_EditorClassIdentifier: 
+  rounds:
+  - {fileID: 11400000, guid: e19351179d7316f469bdf8524a0eb0e9, type: 2}
+  - {fileID: 11400000, guid: 7bd2019cfa91e6b48962795117f28898, type: 2}
+  - {fileID: 11400000, guid: e19351179d7316f469bdf8524a0eb0e9, type: 2}

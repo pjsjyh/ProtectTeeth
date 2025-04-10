@@ -1,0 +1,24 @@
+# Ignore everything in the ProtectTeeth project
+/ProtectTeeth/*
+
+# But do not ignore the Assets folder and its Scripts folder
+!/ProtectTeeth/Assets/
+!/ProtectTeeth/Assets/Scripts/
+!/ProtectTeeth/Assets/Scripts/**
+
+# Ignore meta files except in the Scripts folder
+/ProtectTeeth/Assets/**/*.meta
+!/ProtectTeeth/Assets/Scripts/**/*.meta
+
+# Ignore generated project files and other build artifacts
+ProtectTeeth/Library/
+ProtectTeeth/Temp/
+ProtectTeeth/Obj/
+ProtectTeeth/Logs/
+ProtectTeeth/Build/
+ProtectTeeth/Builds/
+ProtectTeeth/.vs/
+ProtectTeeth/.idea/
+ProtectTeeth/Packages/manifest.json
+ProtectTeeth/Packages/packages-lock.json
+

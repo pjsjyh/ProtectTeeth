@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1cc82fc17016142a991e0bc8463342, type: 3}
+  m_Name: toothpaste
+  m_EditorClassIdentifier: 
+  toothType: 1
+  toothLevel: 1
+  prefab: {fileID: 3673581419767571143, guid: 9573f5ee1c2381447baa7d5d3af5778d, type: 3}
+  toothBody:
+    health: 10
+    speed: 2
+    defense: 3
+    attack: 2
+  tag: 'toothpaste '
+  coin: 8

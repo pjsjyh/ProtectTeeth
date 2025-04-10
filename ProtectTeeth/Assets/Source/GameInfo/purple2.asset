@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd2b0fc15334ba4498f2c788964e787, type: 3}
+  m_Name: purple2
+  m_EditorClassIdentifier: 
+  zombieType: 0
+  zombieLevel: 2
+  prefab: {fileID: 4720912582912942853, guid: 35f919a6850d00a4280bbcdde3bcc597, type: 3}
+  zombieBody:
+    health: 7
+    speed: 1
+    defense: 5
+    attack: 3
+  score: 8
+  tag: purple2
