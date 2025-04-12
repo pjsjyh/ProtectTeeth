@@ -16,7 +16,7 @@ public class SettingInven : MonoBehaviour
   
     private void SettingCanvas()
     {
-        var skills = PlayerSetting.Instance.nowSettingPlayerSkills;
+        var skills = PlayerSetting.nowSettingPlayerSkills;
 
         for (int i = 0; i < skills.Count; i++)
         {

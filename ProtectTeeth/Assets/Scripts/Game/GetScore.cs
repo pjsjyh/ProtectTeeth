@@ -10,7 +10,8 @@ public class GetScore : MonoBehaviour
     private void Awake()
     {
         score = GetComponent<TextMeshProUGUI>();
-        getScore = GameObject.Find("PlayerSetting").GetComponent<PlayerSetting>().playerScore;
+        getScore = PlayerSetting.playerScore;
+        score.text = getScore.ToString();
         PlayerSetting.Instance.OnScoreChanged += UpdateScore;
     }
     // Update is called once per frame

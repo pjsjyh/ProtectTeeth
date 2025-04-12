@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MyGame.Rounds;
@@ -7,36 +7,38 @@ using MyGame.ZombiesScript;
 public class GameInfo : MonoBehaviour
 {
     public static GameInfo Instance { get; private set; }
-    public List<Round> rounds;                // ¸ğµç ¶ó¿îµå Á¤º¸¸¦ ÀúÀåÇÏ´Â ¸®½ºÆ®
+    public List<Round> rounds;                // ëª¨ë“  ë¼ìš´ë“œ ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸
     public RoundCollection roundCollection;
-    public float timeBetweenRounds = 5f;      // ¶ó¿îµå °£ ´ë±â ½Ã°£
+    public float timeBetweenRounds = 5f;      // ë¼ìš´ë“œ ê°„ ëŒ€ê¸° ì‹œê°„
 
 
     public Vector3[] spawnPoints;
     public ObjectPool poolManager;
+
+    public List<GameObject> aliveZombies = new();
     void Awake()
     {
-        // Singleton ¼³Á¤
+        // Singleton ì„¤ì •
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ¾À ÀüÈ¯ ½Ã ÆÄ±«µÇÁö ¾Êµµ·Ï ¼³Á¤
+            DontDestroyOnLoad(gameObject); // ì”¬ ì „í™˜ ì‹œ íŒŒê´´ë˜ì§€ ì•Šë„ë¡ ì„¤ì •
             SetSpqwnPosition();
         }
         else
         {
-            Destroy(gameObject); // Áßº¹µÈ ÀÎ½ºÅÏ½º Á¦°Å
+            Destroy(gameObject); // ì¤‘ë³µëœ ì¸ìŠ¤í„´ìŠ¤ ì œê±°
         }
     }
     public void StartGame()
     {
-        // ÀÚµ¿ ½ÃÀÛ
+        // ìë™ ì‹œì‘
         StartCoroutine(StartGameRutine());
     }
     IEnumerator StartGameRutine()
     {
         yield return new WaitForSeconds(1.0f);
-        StartCoroutine(GameInfo.Instance.StartRounds(0, 0));
+        StartCoroutine(GameInfo.Instance.StartRounds(PlayerSetting.bigRound, PlayerSetting.smallRound));
 
     }
     public IEnumerator StartRounds(int biground, int smallround)
@@ -44,7 +46,7 @@ public class GameInfo : MonoBehaviour
 
         if (roundCollection != null)
         {
-            Round currentRoundData = roundCollection.rounds[smallround]; // ¹è¿­ ÀÎµ¦½º´Â 0ºÎÅÍ ½ÃÀÛÇÏ¹Ç·Î -1
+            Round currentRoundData = roundCollection.rounds[smallround]; // ë°°ì—´ ì¸ë±ìŠ¤ëŠ” 0ë¶€í„° ì‹œì‘í•˜ë¯€ë¡œ -1
 
            // Debug.Log($"Current Round {smallround} has {currentRoundData.zombiesToSpawn.Count} zombie spawn infos:");
 
@@ -54,7 +56,7 @@ public class GameInfo : MonoBehaviour
                 {
                     if (GameManager.Instance.CurrentState==GameManager.GameState.GameOver)
                     {
-                        yield break; // ÄÚ·çÆ¾ Á¾·á!
+                        yield break; // ì½”ë£¨í‹´ ì¢…ë£Œ!
                     }
                     SpawnZombie(zombieInfo);
                     yield return new WaitForSeconds(5.0f);
@@ -69,14 +71,20 @@ public class GameInfo : MonoBehaviour
     {
         if (spawnInfo.zombie.prefab != null && spawnPoints.Length > 0)
         {
-            // ·£´ıÇÑ ½ºÆù Æ÷ÀÎÆ® ¼±ÅÃ
+            // ëœë¤í•œ ìŠ¤í° í¬ì¸íŠ¸ ì„ íƒ
             int randomIndex = Random.Range(0, spawnPoints.Length);
             Vector3 selectedSpawnPoint = spawnPoints[randomIndex];
 
-            // Á»ºñ ÇÁ¸®ÆÕÀ» ½ºÆù À§Ä¡¿¡ ÀÎ½ºÅÏ½ºÈ­
+            // ì¢€ë¹„ í”„ë¦¬íŒ¹ì„ ìŠ¤í° ìœ„ì¹˜ì— ì¸ìŠ¤í„´ìŠ¤í™”
             //Debug.Log(selectedSpawnPoint + " " + randomIndex+" "+ spawnInfo.zombie.tag);
             GameObject zombie = poolManager.GetFromPool(spawnInfo.zombie.tag, selectedSpawnPoint, Quaternion.identity);
+            GameInfo.Instance.aliveZombies.Add(zombie);
 
+            zombie.GetComponent<MonsterSetting>().onDeath = () =>
+            {
+                GameInfo.Instance.aliveZombies.Remove(zombie);
+                TryCheckRoundClear();
+            };
             // GameObject spawnedZombie = Instantiate(spawnInfo.zombie.prefab, selectedSpawnPoint, Quaternion.identity);
             // spawnedZombie.name = "CustomZombieName";
         }
@@ -94,5 +102,13 @@ public class GameInfo : MonoBehaviour
         spawnPoints[3] = new Vector3(10f, -1f, 0);
         spawnPoints[4] = new Vector3(10f, -2.5f, 0);
         spawnPoints[5] = new Vector3(10f, -4.0f, 0);
+    }
+    void TryCheckRoundClear()
+    {
+        if (GameInfo.Instance.aliveZombies.Count == 0)
+        {
+            Debug.Log("ğŸ‰ ë¼ìš´ë“œ í´ë¦¬ì–´!");
+            GameManager.Instance.ChangeState(GameManager.GameState.RoundClear);
+        }
     }
 }

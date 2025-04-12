@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public PlayerSetting playerSkill;
     // 게임 상태
-    public enum GameState { Login, MainMenu, Playing, Paused, GameOver }
+    public enum GameState { Login, MainMenu, Playing, Paused, GameOver, RoundClear }
     public GameState CurrentState { get; private set; }
     public int StageBig = 0;
     public int StageSmall = 0;
@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour
             case GameState.GameOver:
                 GameOver gameOver = FindObjectOfType<GameOver>();
                 gameOver.SetGameOver();
+                break;
+            case GameState.RoundClear:
+                GameOver gameClear = FindObjectOfType<GameOver>();
+                gameClear.SetGameClear();
                 break;
         }
     }

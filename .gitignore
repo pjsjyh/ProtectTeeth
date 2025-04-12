@@ -1,24 +1,28 @@
-# Ignore everything in the ProtectTeeth project
+# ProtectTeeth 전체 무시
 /ProtectTeeth/*
 
-# But do not ignore the Assets folder and its Scripts folder
+# Assets 폴더만 포함
 !/ProtectTeeth/Assets/
+!/ProtectTeeth/Assets/**
+
+# Scripts 폴더만 meta 포함해서 허용
 !/ProtectTeeth/Assets/Scripts/
 !/ProtectTeeth/Assets/Scripts/**
 
-# Ignore meta files except in the Scripts folder
+# meta 파일은 전부 무시하지만, Scripts 쪽만 허용
 /ProtectTeeth/Assets/**/*.meta
 !/ProtectTeeth/Assets/Scripts/**/*.meta
 
-# Ignore generated project files and other build artifacts
-ProtectTeeth/Library/
-ProtectTeeth/Temp/
-ProtectTeeth/Obj/
-ProtectTeeth/Logs/
-ProtectTeeth/Build/
-ProtectTeeth/Builds/
-ProtectTeeth/.vs/
-ProtectTeeth/.idea/
-ProtectTeeth/Packages/manifest.json
-ProtectTeeth/Packages/packages-lock.json
+# 빌드/임시 파일 무시
+/ProtectTeeth/Library/
+/ProtectTeeth/Temp/
+/ProtectTeeth/Obj/
+/ProtectTeeth/Logs/
+/ProtectTeeth/Build/
+/ProtectTeeth/Builds/
+/ProtectTeeth/.vs/
+/ProtectTeeth/.idea/
 
+# Unity 패키지 설정 무시
+/ProtectTeeth/Packages/manifest.json
+/ProtectTeeth/Packages/packages-lock.json

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MyGame.ZombiesScript;
+using System;
 
 public class MonsterSetting : MonoBehaviour, IAttackable
 {
@@ -12,9 +13,9 @@ public class MonsterSetting : MonoBehaviour, IAttackable
     public float thisHealth;
 
     private IAttackable target;
-    private GoodSetting attackGoodTarget;
-    private TeethState attackTeeth;
     private Coroutine attackRoutine;
+    public Action onDeath;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -106,6 +107,7 @@ public class MonsterSetting : MonoBehaviour, IAttackable
         animator.SetBool("isAttack", false);
         animator.SetBool("isDie", true);
         gameObject.SetActive(false);
+        onDeath?.Invoke();
         PlayerSetting.Instance.AddScore(myZombieInfo.score);
     }
     public void startChage()

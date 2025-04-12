@@ -13,7 +13,7 @@ public class AddItem : MonoBehaviour
     {
         if (isIn)
         {
-            if (PlayerSetting.Instance.playerskill.Count >= 0)
+            if (PlayerSetting.playerskill.Count >= 0)
             {
                 GameObject thisItem = GetComponent<CanvasGetInfo>().thisInfo;
                 PlayerSetting.Instance.RemoveItem(thisItem);
@@ -22,10 +22,10 @@ public class AddItem : MonoBehaviour
         }
         else
         {
-            if (PlayerSetting.Instance.playerskill.Count < 5)
+            if (PlayerSetting.playerskill.Count < 5)
             {
                 GameObject thisItem = GetComponent<CanvasGetInfo>().thisInfo;
-                PlayerSetting.Instance.AddItem(PlayerSetting.Instance.playerskill, thisItem);
+                PlayerSetting.Instance.AddItem(PlayerSetting.playerskill, thisItem);
                 isIn = true;
             }
         }

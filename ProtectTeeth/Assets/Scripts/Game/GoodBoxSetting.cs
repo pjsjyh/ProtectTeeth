@@ -25,6 +25,7 @@ public class GoodBoxSetting : MonoBehaviour
         }
         else
         {
+
             if (isAttacking)
             {
                 isAttacking = false;

@@ -9,9 +9,13 @@ public class PlayerSetting : MonoBehaviour
 {
     public static PlayerSetting Instance { get; private set; }
     public GoodCollection goodList;
-    public List<GameObject> playerskill; // 장착한 5개의 인벤토리
-    public List<GameObject> nowSettingPlayerSkills; //가지고 있는 스킬들
-    public int playerScore = 30;
+    public static List<GameObject> playerskill; // 현재 장착한 5개의 인벤토리
+    public static List<GameObject> nowSettingPlayerSkills; //가지고 있는 스킬 목록들
+    public static volatile int playerScore = 30;
+    public static int bigRound = 0;
+    public static int smallRound = 0;
+
+
     public delegate void ScoreChanged(int newScore);
     public event ScoreChanged OnScoreChanged;
     public Action OnPlayerSkillChanged;
@@ -43,12 +47,14 @@ public class PlayerSetting : MonoBehaviour
 
     public void AddItem(List<GameObject> list, GameObject item)
     {
-        list.Add(item);
-        // Debug.Log($"{item} added to inventory.");
-        if(list== playerskill)
+        if (!list.Contains(item))
         {
-            OnPlayerSkillChanged?.Invoke();
+            list.Add(item);
 
+            if (list == playerskill)
+            {
+                OnPlayerSkillChanged?.Invoke();
+            }
         }
     }
 

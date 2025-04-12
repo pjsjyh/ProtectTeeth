@@ -18,13 +18,13 @@ public class GamePlayManager : MonoBehaviour
         if (playerCanvas != null)
         {
             // 자식 객체 순회
-            for(int i=0;i< PlayerSetting.Instance.playerskill.Count; i++)
+            for(int i=0;i< PlayerSetting.playerskill.Count; i++)
             {
                 GameObject child = playerCanvas.transform.GetChild(i).gameObject;
-                child.transform.GetChild(0).GetComponent<Image>().sprite = PlayerSetting.Instance.playerskill[i].GetComponent<GoodSetting>().toothinfo.prefab.GetComponent<SpriteRenderer>().sprite;
-                child.GetComponent<CanvasGetInfo>().thisInfo = PlayerSetting.Instance.playerskill[i].GetComponent<GoodSetting>().toothinfo.prefab;
+                child.transform.GetChild(0).GetComponent<Image>().sprite = PlayerSetting.playerskill[i].GetComponent<GoodSetting>().toothinfo.prefab.GetComponent<SpriteRenderer>().sprite;
+                child.GetComponent<CanvasGetInfo>().thisInfo = PlayerSetting.playerskill[i].GetComponent<GoodSetting>().toothinfo.prefab;
                 child.transform.GetChild(1).gameObject.SetActive(true);
-                child.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = PlayerSetting.Instance.playerskill[i].GetComponent<GoodSetting>().toothinfo.coin.ToString();
+                child.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = PlayerSetting.playerskill[i].GetComponent<GoodSetting>().toothinfo.coin.ToString();
             }
         }
     }

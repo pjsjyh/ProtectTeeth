@@ -53,8 +53,8 @@ public class MouseFollowImage : MonoBehaviour
         // 버튼의 이미지를 가져와 따라다니는 이미지로 설정
         Image buttonImage = button.transform.GetChild(0).GetComponent<Image>();
         int nown = button.GetComponent<CanvasGetInfo>().thisInfo.GetComponent<GoodSetting>().toothinfo.coin;
-        Debug.Log(nown+" "+ PlayerSetting.Instance.playerScore);
-        if (0 > PlayerSetting.Instance.playerScore-nown) return;
+        Debug.Log(nown+" "+ PlayerSetting.playerScore);
+        if (0 > PlayerSetting.playerScore-nown) return;
         if (buttonImage != null)
         {
             nowClick = button.GetComponent<CanvasGetInfo>().thisInfo;
