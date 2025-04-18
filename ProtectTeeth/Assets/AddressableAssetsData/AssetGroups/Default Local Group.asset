@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2e401e8e4656db84a8c5c06ba9c2d657
+  m_SerializeEntries:
+  - m_GUID: d234e322a59b55a478b8209a2992f161
+    m_Address: Assets/Source/BackgroundImg/StartScene.spriteatlasv2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc14e9b9c3aafa44cb18de59ac1877e7
+    m_Address: Assets/Source/BackgroundImg/back/title1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7539393c1e6728441965bd2ca01e58ae
+    m_Address: Assets/Source/BackgroundImg/back/title2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7cc1852dd69a9140a8e9d0602323689
+    m_Address: Assets/Source/BackgroundImg/back/Sprite-0005.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad59dca1448f5d24395555c00a46d3de
+    m_Address: Assets/Source/BackgroundImg/Materials/box.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa40ed4d460993948841e800ec68c055
+    m_Address: Assets/Source/BackgroundImg/back/Bag4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3897547e625a74542884ed538f528833
+    m_Address: Assets/Source/BackgroundImg/back/startbtn3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 692920d3a751db3419c7b0ef22a51965
+    m_Address: Assets/Source/BackgroundImg/back/bagback.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 815ad1b85686ecb4692093640c804add
+    m_Address: Assets/Source/BackgroundImg/back/pictoicon_control_play.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b934dcd858caf14d8fe7c7bba0ae75a
+    m_Address: Assets/Scenes/LobbyScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c9cfa26abfee488c85f1582747f6a02
+    m_Address: Assets/Scenes/GamePlayScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1428da0936e5bd6409d302125201a649
+    m_Address: Assets/Source/Prefab/Monster/virus.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35f919a6850d00a4280bbcdde3bcc597
+    m_Address: Assets/Source/Prefab/Monster/m2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9be481486ac8f004c91f6c99475037fb
+    m_Address: Assets/Source/Prefab/Monster/r1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82eba2a23bf36c043af18fddf3f2a3e1
+    m_Address: Assets/Source/Prefab/Good/toothbrush+paste.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a498dca8176be54448423b5961cf5d84
+    m_Address: Assets/Source/Prefab/Good/teethbrush_bubble.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a49e5ce3a5211244bb2b30b45a9279b7
+    m_Address: Assets/Source/Prefab/Good/toothbrush+pasteAtk.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 852a78d39b054fd478afef531f9faea7
+    m_Address: Assets/Source/Prefab/Good/toothpasteAtk.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9573f5ee1c2381447baa7d5d3af5778d
+    m_Address: Assets/Source/Prefab/Good/toothpaste.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6bc822c5209daa0439e847f40b41ada0
+    m_Address: Assets/Source/Prefab/Good/toothbrush_ani1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3174611770c8cf340818258f252e032d
+    m_Address: Assets/Source/Prefab/Monster/virus 2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 395b0ae674880bd47be6e8c17db20a95
+    m_Address: Assets/Source/Maplestory Light SDF.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c341a6d2a8ccd24a8153775f6c343a0
+    m_Address: Assets/Source/Maplestory Bold.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6df83899b6592f41b61efbed5b92e98
+    m_Address: Assets/Source/Maplestory Light.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cfa0b9108b491d34d98a9bedb10a3f4b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 04eccf6ff1fa9a847a9660257e7447d1, type: 2}
+    - {fileID: 11400000, guid: 0af650bf0b6f57043b3f0afc0f7560d9, type: 2}

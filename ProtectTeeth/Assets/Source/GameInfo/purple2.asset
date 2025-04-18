@@ -22,3 +22,4 @@ MonoBehaviour:
     attack: 3
   score: 8
   tag: purple2
+  prefabAddress: Assets/Source/Prefab/Monster/m2.prefab

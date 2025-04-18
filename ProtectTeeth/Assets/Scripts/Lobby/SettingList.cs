@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -23,20 +23,39 @@ public class SettingList : MonoBehaviour
     {
         if (playerCanvas != null)
         {
-            // ÀÚ½Ä °´Ã¼ ¼øÈ¸
-            for (int i = 0; i < PlayerSetting.playerskill.Count; i++)
+            // ìžì‹ ê°ì²´ ìˆœíšŒ
+            for (int i = 0; i < 5; i++)
             {
                 GameObject child = playerCanvas.transform.GetChild(i).gameObject;
-                child.SetActive(true);
-                child.transform.GetChild(0).GetComponent<Image>().sprite = PlayerSetting.playerskill[i].GetComponent<GoodSetting>().toothinfo.prefab.GetComponent<SpriteRenderer>().sprite;
-                child.GetComponent<CanvasGetInfo>().thisInfo = PlayerSetting.playerskill[i].GetComponent<GoodSetting>().toothinfo.prefab;
-                child.transform.GetChild(1).gameObject.SetActive(true);
-                child.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = PlayerSetting.playerskill[i].GetComponent<GoodSetting>().toothinfo.coin.ToString();
-            }
-            for (int i = PlayerSetting.playerskill.Count; i < 5; i++)
-            {
-                GameObject child = playerCanvas.transform.GetChild(i).gameObject;
-                child.SetActive(false);
+
+                if (i < PlayerSetting.playerskill.Count)
+                {
+                    var skillObj = PlayerSetting.playerskill[i];
+                    var goodSetting = skillObj.GetComponent<GoodSetting>();
+                    var tooth = goodSetting.toothinfo;
+
+                    child.SetActive(true);
+
+                    var image = child.transform.GetChild(0).GetComponent<Image>();
+                    var sprite = tooth.prefab.GetComponent<SpriteRenderer>().sprite;
+                    if (image.sprite != sprite)
+                        image.sprite = sprite;
+
+                    var canvasInfo = child.GetComponent<CanvasGetInfo>();
+                    if (canvasInfo.thisInfo != tooth.prefab)
+                        canvasInfo.thisInfo = tooth.prefab;
+
+                    child.transform.GetChild(1).gameObject.SetActive(true);
+
+                    var tmp = child.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+                    string coinText = tooth.coin.ToString();
+                    if (tmp.text != coinText)
+                        tmp.text = coinText;
+                }
+                else
+                {
+                    child.SetActive(false);
+                }
             }
         }
     }

@@ -22,3 +22,4 @@ MonoBehaviour:
     attack: 5
   score: 10
   tag: green1
+  prefabAddress: Assets/Source/Prefab/Monster/r1.prefab

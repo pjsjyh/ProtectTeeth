@@ -1,6 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
@@ -9,35 +12,40 @@ public class SceneChange : MonoBehaviour
     public float fadeDuration = 1.0f;
     void Awake()
     {
-        // Singleton ¼³Á¤
+        // Singleton ì„¤ì •
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ¾À ÀüÈ¯ ½Ã ÆÄ±«µÇÁö ¾Êµµ·Ï ¼³Á¤
+            DontDestroyOnLoad(gameObject); // ì”¬ ì „í™˜ ì‹œ íŒŒê´´ë˜ì§€ ì•Šë„ë¡ ì„¤ì •
         }
         else
         {
-            Destroy(gameObject); // Áßº¹µÈ ÀÎ½ºÅÏ½º Á¦°Å
+            Destroy(gameObject); // ì¤‘ë³µëœ ì¸ìŠ¤í„´ìŠ¤ ì œê±°
         }
     }
-    public void FadeAndLoadScene(string sceneName)
+    public void FadeAndLoadScene(string sceneName, string sceneAddress="")
     {
-        StartCoroutine(FadeOutAndLoadScene(sceneName));
+        StartCoroutine(FadeOutAndLoadScene(sceneName, sceneAddress));
     }
 
-    // Fade Out -> ¾À ·Îµå -> Fade In
-    private IEnumerator FadeOutAndLoadScene(string sceneName)
+    // Fade Out -> ì”¬ ë¡œë“œ -> Fade In
+    private IEnumerator FadeOutAndLoadScene(string sceneName, string sceneAddress="")
     {
         // Fade Out
         yield return StartCoroutine(FadeOut(fadeDuration));
 
-        // ¾À ºñµ¿±â ·Îµå
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        while (!asyncLoad.isDone)
+        // ì”¬ ë¹„ë™ê¸° ë¡œë“œ
+        //AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperationHandle<SceneInstance> handle = Addressables.LoadSceneAsync(sceneAddress);
+        yield return handle;
+        //while (!asyncLoad.isDone)
+        //{
+        //    yield return null;
+        //}
+        if (handle.Status != AsyncOperationStatus.Succeeded)
         {
-            yield return null;
+            Debug.LogError("âŒ Addressables ì”¬ ë¡œë“œ ì‹¤íŒ¨: " + sceneAddress);
         }
-
         // Fade In
         yield return StartCoroutine(FadeIn(fadeDuration));
     }
@@ -47,11 +55,11 @@ public class SceneChange : MonoBehaviour
 
         for (float t = 0; t < duration; t += Time.deltaTime)
         {
-            fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, 1, t / duration); // ¿ÏÀüÈ÷ °ËÀº È­¸é
+            fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, 1, t / duration); // ì™„ì „íˆ ê²€ì€ í™”ë©´
             yield return null;
         }
 
-        fadeCanvasGroup.alpha = 1; // ¿ÏÀüÈ÷ ¾îµÎ¿öÁü
+        fadeCanvasGroup.alpha = 1; // ì™„ì „íˆ ì–´ë‘ì›Œì§
     }
 
     private IEnumerator FadeIn(float duration)
@@ -60,10 +68,10 @@ public class SceneChange : MonoBehaviour
 
         for (float t = 0; t < duration; t += Time.deltaTime)
         {
-            fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, 0, t / duration); // È­¸éÀÌ ¹à¾ÆÁü
+            fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, 0, t / duration); // í™”ë©´ì´ ë°ì•„ì§
             yield return null;
         }
 
-        fadeCanvasGroup.alpha = 0; // ¿ÏÀüÈ÷ ¹àÀº »óÅÂ
+        fadeCanvasGroup.alpha = 0; // ì™„ì „íˆ ë°ì€ ìƒíƒœ
     }
 }

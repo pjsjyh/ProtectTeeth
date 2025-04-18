@@ -41,8 +41,6 @@ public class MouseFollowImage : MonoBehaviour
             // 셀의 중심 월드 좌표 계산
             Vector3 cellWorldPosition = tilemap.GetCellCenterWorld(cellPosition);
 
-            Debug.Log($"Cell Position: {cellPosition}, World Position: {cellWorldPosition}");
-
             // 오브젝트 생성
             SpawnObjectAt(cellWorldPosition);
         }
@@ -58,8 +56,8 @@ public class MouseFollowImage : MonoBehaviour
         if (buttonImage != null)
         {
             nowClick = button.GetComponent<CanvasGetInfo>().thisInfo;
-            followImage.sprite = buttonImage.sprite; // 버튼의 Sprite를 가져오기
-            followImage.gameObject.SetActive(true); // 이미지 활성화
+            followImage.sprite = buttonImage.sprite;
+            followImage.gameObject.SetActive(true);
             isFollowing = true;
             PlayerSetting.Instance.SubScore(nown);
         }

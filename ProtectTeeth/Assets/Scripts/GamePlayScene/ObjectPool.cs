@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MyGame.ZombiesScript;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.AddressableAssets;
+
 public class ObjectPool : MonoBehaviour
 {
     [System.Serializable]
@@ -29,6 +32,11 @@ public class ObjectPool : MonoBehaviour
     }
     void Start()
     {
+        StartCoroutine(InitializePools());
+
+    }
+    private IEnumerator InitializePools()
+    {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
         GameObject parentObject = new GameObject("ObjectPoolParent");
         DontDestroyOnLoad(parentObject);
@@ -39,7 +47,8 @@ public class ObjectPool : MonoBehaviour
             poolParent.transform.SetParent(parentObject.transform);
             DontDestroyOnLoad(poolParent);
             Queue<GameObject> objectPool = new Queue<GameObject>();
-
+            AsyncOperationHandle<GameObject> handle = Addressables.LoadAssetAsync<GameObject>(pool.zombie.prefabAddress);
+            yield return handle;
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.zombie.prefab);
@@ -50,10 +59,9 @@ public class ObjectPool : MonoBehaviour
 
             poolDictionary.Add(pool.tag, objectPool);
         }
-        
     }
 
-    public GameObject GetFromPool(string tag, Vector3 position, Quaternion rotation)
+        public GameObject GetFromPool(string tag, Vector3 position, Quaternion rotation)
     {
         
         if (!poolDictionary.ContainsKey(tag))

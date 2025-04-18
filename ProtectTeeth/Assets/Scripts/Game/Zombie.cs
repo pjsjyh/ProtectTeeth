@@ -25,6 +25,7 @@ namespace MyGame.ZombiesScript
         public ZombieBody zombieBody;
         public int score;
         public string tag;
+        public string prefabAddress;
     }
 }
 
