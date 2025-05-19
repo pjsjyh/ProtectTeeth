@@ -21,6 +21,7 @@ public class MonsterSetting : MonoBehaviour, IAttackable
         animator = GetComponent<Animator>();
         moveSpeed = myZombieInfo.zombieBody.speed;
         thisHealth = myZombieInfo.zombieBody.health;
+
     }
     void Update()
     {
@@ -95,6 +96,7 @@ public class MonsterSetting : MonoBehaviour, IAttackable
     public void TakeDamage(float damage)
     {
         thisHealth -= damage;
+        Debug.Log(this.name+ "  hp" + thisHealth);
         if (thisHealth <= 0)
         {
             Die();
@@ -103,6 +105,8 @@ public class MonsterSetting : MonoBehaviour, IAttackable
     private void Die()
     {
         StopAttack();
+        SpriteRenderer sr = this.GetComponent<SpriteRenderer>();
+        sr.color = new Color32(255, 255, 255, 255);
         animator.SetBool("isWalk", false);
         animator.SetBool("isAttack", false);
         animator.SetBool("isDie", true);

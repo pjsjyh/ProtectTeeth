@@ -15,7 +15,7 @@ public class GameOver : MonoBehaviour
     {
         finishWord.text = "Clear";
         Invoke("ClearGame", 0.05f);
-
+        PlayerSetting.smallRound++;
     }
     private void ClearGame()
     {

@@ -37,12 +37,16 @@ public class PlayerSetting : MonoBehaviour
     {
         playerskill = new List<GameObject>();
         nowSettingPlayerSkills = new List<GameObject>();
+        for(int i=0;i< goodList.goodPrefab.Count; i++)
+        {
+            AddItem(nowSettingPlayerSkills, goodList.goodPrefab[i]);
+        }
         //AddItem(playerskill, goodList.goodPrefab[0]);
-        AddItem(nowSettingPlayerSkills, goodList.goodPrefab[0]);
+      
         //AddItem(playerskill, goodList.goodPrefab[1]);
-        AddItem(nowSettingPlayerSkills, goodList.goodPrefab[1]);
+       // AddItem(nowSettingPlayerSkills, goodList.goodPrefab[1]);
         //AddItem(playerskill, goodList.goodPrefab[2]);
-        AddItem(nowSettingPlayerSkills, goodList.goodPrefab[2]);
+       // AddItem(nowSettingPlayerSkills, goodList.goodPrefab[2]);
     }
 
     public void AddItem(List<GameObject> list, GameObject item)

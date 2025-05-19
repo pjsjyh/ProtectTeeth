@@ -37,11 +37,11 @@ public static class AddressableImageLoader
     {
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            Debug.Log("✅ 씬 로드 완료!");
+            Debug.Log(" 씬 로드 완료!");
         }
         else
         {
-            Debug.LogError("❌ 씬 로드 실패!");
+            Debug.LogError("씬 로드 실패!");
         }
     }
 }

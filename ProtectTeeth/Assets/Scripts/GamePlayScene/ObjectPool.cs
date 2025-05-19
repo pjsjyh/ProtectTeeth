@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MyGame.ZombiesScript;
@@ -40,7 +40,7 @@ public class ObjectPool : MonoBehaviour
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
         GameObject parentObject = new GameObject("ObjectPoolParent");
         DontDestroyOnLoad(parentObject);
-        // °¢ ÇÁ¸®ÆÕ¿¡ ´ëÇØ Ç® »ı¼º
+        // ê° í”„ë¦¬íŒ¹ì— ëŒ€í•´ í’€ ìƒì„±
         foreach (var pool in pools)
         {
             GameObject poolParent = new GameObject(pool.tag + "_Pool");
@@ -81,8 +81,7 @@ public class ObjectPool : MonoBehaviour
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
-
-        poolDictionary[tag].Enqueue(objectToSpawn); // ´Ù½Ã Å¥¿¡ Ãß°¡
+        poolDictionary[tag].Enqueue(objectToSpawn); // ë‹¤ì‹œ íì— ì¶”ê°€
         return objectToSpawn;
     }
     public void DeactivateAll()

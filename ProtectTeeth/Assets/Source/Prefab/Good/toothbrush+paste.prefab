@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2984589316200828303}
   - component: {fileID: 6826019877227098644}
   - component: {fileID: -2568407195506040004}
-  - component: {fileID: 8244454669298765092}
+  - component: {fileID: 2173625356371921930}
   m_Layer: 0
   m_Name: toothbrush+paste
   m_TagString: Good
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93500555, y: 1.301019}
   m_EdgeRadius: 0
---- !u!114 &8244454669298765092
+--- !u!114 &2173625356371921930
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,12 +143,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072423206829442476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5c19d00a2520ae4293f5730d5871fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d8c463c9c4ccd498bafc40c00cd24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   toothinfo: {fileID: 11400000, guid: 42837654e49590c45944067acef94270, type: 2}
+  thisHealth: 15
   attackCollider: {fileID: -2568407195506040004}
-  thisHealth: 0
   attackPrefab: {fileID: 4712332527422592075, guid: a49e5ce3a5211244bb2b30b45a9279b7, type: 3}
 --- !u!1 &8161151465836384639
 GameObject:
@@ -194,5 +194,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16549c00c8645246986e6c79a2a21dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goodSetting: {fileID: 8244454669298765092}
+  goodSetting: {fileID: 2173625356371921930}
   boxSize: {x: 4, y: 0.6}

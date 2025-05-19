@@ -48,7 +48,7 @@ public class GameInfo : MonoBehaviour
         {
             Round currentRoundData = roundCollection.rounds[smallround]; // 배열 인덱스는 0부터 시작하므로 -1
 
-           // Debug.Log($"Current Round {smallround} has {currentRoundData.zombiesToSpawn.Count} zombie spawn infos:");
+            // Debug.Log($"Current Round {smallround} has {currentRoundData.zombiesToSpawn.Count} zombie spawn infos:");
 
             foreach (var zombieInfo in currentRoundData.zombiesToSpawn)
             {
@@ -71,12 +71,14 @@ public class GameInfo : MonoBehaviour
     {
         if (spawnInfo.zombie.prefab != null && spawnPoints.Length > 0)
         {
+
+            Debug.Log("??");
             // 랜덤한 스폰 포인트 선택
             int randomIndex = Random.Range(0, spawnPoints.Length);
             Vector3 selectedSpawnPoint = spawnPoints[randomIndex];
 
             // 좀비 프리팹을 스폰 위치에 인스턴스화
-            //Debug.Log(selectedSpawnPoint + " " + randomIndex+" "+ spawnInfo.zombie.tag);
+            Debug.Log(selectedSpawnPoint + " " + randomIndex+" "+ spawnInfo.zombie.tag);
             GameObject zombie = poolManager.GetFromPool(spawnInfo.zombie.tag, selectedSpawnPoint, Quaternion.identity);
             GameInfo.Instance.aliveZombies.Add(zombie);
 

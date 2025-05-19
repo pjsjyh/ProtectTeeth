@@ -490,6 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeScenename: LobbyScene
   sceneAddress: Assets/Scenes/LobbyScene.unity
+  isGameBtn: 0
 --- !u!1 &550030208
 GameObject:
   m_ObjectHideFlags: 0

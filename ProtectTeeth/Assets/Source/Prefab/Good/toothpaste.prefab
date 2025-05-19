@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2299952810909326308}
   - component: {fileID: 4435837144553910669}
   - component: {fileID: 4982431449506374202}
-  - component: {fileID: 2185441127718926206}
   - component: {fileID: -6711155977125137538}
+  - component: {fileID: 39220419987001192}
   m_Layer: 0
   m_Name: toothpaste
   m_TagString: Good
@@ -114,22 +114,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.70749986, y: 1.1149893}
   m_EdgeRadius: 0
---- !u!114 &2185441127718926206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3673581419767571143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5c19d00a2520ae4293f5730d5871fcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toothinfo: {fileID: 11400000, guid: b136b294ec6d0804e85c807140c6042c, type: 2}
-  attackCollider: {fileID: 4335796565509891164}
-  thisHealth: 0
-  attackPrefab: {fileID: 2653588166482287320, guid: 852a78d39b054fd478afef531f9faea7, type: 3}
 --- !u!95 &-6711155977125137538
 Animator:
   serializedVersion: 4
@@ -150,6 +134,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &39220419987001192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673581419767571143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d8c463c9c4ccd498bafc40c00cd24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toothinfo: {fileID: 11400000, guid: b136b294ec6d0804e85c807140c6042c, type: 2}
+  thisHealth: 15
+  attackCollider: {fileID: 4982431449506374202}
+  attackPrefab: {fileID: 2653588166482287320, guid: 852a78d39b054fd478afef531f9faea7, type: 3}
 --- !u!1 &5585518806025443669
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,5 +221,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16549c00c8645246986e6c79a2a21dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goodSetting: {fileID: 2185441127718926206}
+  goodSetting: {fileID: 39220419987001192}
   boxSize: {x: 4, y: 1}
