@@ -1,4 +1,4 @@
-# penguinAdventure
+# 치과는 싫어
 
 ![image](https://github.com/user-attachments/assets/40209d8e-b6f8-4875-bba2-e1a36d944c1f)
 
