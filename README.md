@@ -28,7 +28,7 @@ https://www.youtube.com/watch?v=bT7H7SjwhPc
    - Addressables를 활용한 메모리 절감.
    - 감지 기능만 활용하기 위해 OverlapBoxNonAlloc 사용. [몬스터 감지](https://github.com/pjsjyh/ProtectTeeth/blob/master/ProtectTeeth/Assets/Scripts/Game/GoodBoxSetting.cs)
 4) 효율적인 코드 구성
-   - 인터페이스를 활용해 코드 분리 및 유지보수성 향상
+   - 인터페이스, 상속을 활용해 코드 분리 및 유지보수성 향상 [상속을 이용한 공격코드](https://github.com/pjsjyh/ProtectTeeth/blob/master/ProtectTeeth/Assets/Scripts/Game/GoodTeethSetting.cs) [공통 코드](https://github.com/pjsjyh/ProtectTeeth/blob/master/ProtectTeeth/Assets/Scripts/Game/GoodSetting.cs)
    - static을 활용해 데이터 관리
    - 공통 로직 묶어 활용도 향상
 5) 이미지 사용
