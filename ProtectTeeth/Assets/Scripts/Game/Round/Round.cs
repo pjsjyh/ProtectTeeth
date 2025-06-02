@@ -15,7 +15,7 @@ namespace MyGame.Rounds
     public class Round : ScriptableObject
     {
         public List<ZombieSpawnInfo> zombiesToSpawn;
-
+        public bool isNight = false;
     }
   
 }

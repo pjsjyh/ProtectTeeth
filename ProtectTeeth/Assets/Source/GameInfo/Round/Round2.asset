@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombiesToSpawn:
   - zombie: {fileID: 11400000, guid: 0985d87bb34f1e04cb689466e64dc688, type: 2}
-    count: 10
+    count: 7
+  - zombie: {fileID: 11400000, guid: 1e8c1793390400348b0ea0d58f080683, type: 2}
+    count: 7
+  - zombie: {fileID: 11400000, guid: 9f4238cff0b179b408d824bbf5594a2c, type: 2}
+    count: 7

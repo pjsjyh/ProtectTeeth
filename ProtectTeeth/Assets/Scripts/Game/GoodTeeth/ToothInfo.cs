@@ -5,7 +5,7 @@ using System;
 namespace MyGame.ToothInfos
 {
     [Serializable]
-    public enum ToothEnum { toothbrush, toothpaste, autotooth, gargle, bomb };
+    public enum ToothEnum { toothbrush, toothpaste, autotooth, gargle, bomb, Lamp, Defence };
 
 
     [Serializable]

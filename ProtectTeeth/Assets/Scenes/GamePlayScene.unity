@@ -2204,9 +2204,10 @@ GameObject:
   m_Component:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
+  - component: {fileID: 619394803}
   m_Layer: 0
   m_Name: Global Light 2D
-  m_TagString: Untagged
+  m_TagString: MainLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2281,6 +2282,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &619394803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619394800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4221fe16cbd4df34cb0fb148281bf34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light2D: {fileID: 619394801}
+  turnOnSpeed: 2
 --- !u!1 &621312917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,6 +2746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9cba3bbc2e045448d6e1845f3d6c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LightPrefab: {fileID: 7101091990595002929, guid: bb1534e186f7b7e45a95ac8797e3c43a, type: 3}
   tilemap: {fileID: 187960228}
   followImage: {fileID: 1898737575}
   nowClick: {fileID: 0}
@@ -3015,7 +3031,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 4c5db12ebe91ee34dbbd1e3e6201e038, type: 3}
       - {fileID: 21300000, guid: 75c2ac34f67cbd5428b12c6201746e1f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: -2, z: 0}
@@ -3032,7 +3048,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: efd8a245538f6cd438c368ae1ff7fcc6, type: 3}
       - {fileID: 21300000, guid: 03a28562bc843fe4b9700568fcca7dfe, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -3, y: 1, z: 0}
@@ -3048,7 +3064,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 21300000, guid: 4c5db12ebe91ee34dbbd1e3e6201e038, type: 3}
       - {fileID: 21300000, guid: 75c2ac34f67cbd5428b12c6201746e1f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:

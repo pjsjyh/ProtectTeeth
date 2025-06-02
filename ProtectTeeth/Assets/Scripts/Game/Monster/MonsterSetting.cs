@@ -111,6 +111,8 @@ public class MonsterSetting : MonoBehaviour, IAttackable
         animator.SetBool("isAttack", false);
         animator.SetBool("isDie", true);
         gameObject.SetActive(false);
+        thisHealth = myZombieInfo.zombieBody.health;
+
         onDeath?.Invoke();
         PlayerSetting.Instance.AddScore(myZombieInfo.score);
     }

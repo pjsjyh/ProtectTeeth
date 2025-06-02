@@ -6,6 +6,7 @@ using MyGame.RoundCollection;
 using MyGame.ZombiesScript;
 public class GameInfo : MonoBehaviour
 {
+
     public static GameInfo Instance { get; private set; }
     public List<Round> rounds;                // 모든 라운드 정보를 저장하는 리스트
     public RoundCollection roundCollection;
@@ -16,6 +17,8 @@ public class GameInfo : MonoBehaviour
     public ObjectPool poolManager;
 
     public List<GameObject> aliveZombies = new();
+
+    public bool isNight = false;
     void Awake()
     {
         // Singleton 설정
@@ -38,7 +41,7 @@ public class GameInfo : MonoBehaviour
     IEnumerator StartGameRutine()
     {
         yield return new WaitForSeconds(1.0f);
-        StartCoroutine(GameInfo.Instance.StartRounds(PlayerSetting.bigRound, PlayerSetting.smallRound));
+        StartCoroutine(StartRounds(PlayerSetting.nowRound.bigRound, PlayerSetting.nowRound.smallRound));
 
     }
     public IEnumerator StartRounds(int biground, int smallround)
@@ -49,7 +52,10 @@ public class GameInfo : MonoBehaviour
             Round currentRoundData = roundCollection.rounds[smallround]; // 배열 인덱스는 0부터 시작하므로 -1
 
             // Debug.Log($"Current Round {smallround} has {currentRoundData.zombiesToSpawn.Count} zombie spawn infos:");
-
+            if (currentRoundData.isNight)
+            {
+                isNight = true;
+            }
             foreach (var zombieInfo in currentRoundData.zombiesToSpawn)
             {
                 for(int i = 0; i < zombieInfo.count; i++)

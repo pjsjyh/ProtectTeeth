@@ -10,11 +10,12 @@ public class StartGame : MonoBehaviour
     public bool isStart = false;
     public void startGame()
     {
-        if(thisBigRound<=PlayerSetting.bigRound && thisSmallRound <= PlayerSetting.smallRound)
+        if(thisBigRound<=PlayerSetting.MaxRound.bigRound && thisSmallRound <= PlayerSetting.MaxRound.smallRound)
         {
             isStart = true;
             GameManager.Instance.ChangeState(GameManager.GameState.Playing);
-
+            PlayerSetting.nowRound.bigRound = thisBigRound;
+            PlayerSetting.nowRound.smallRound = thisSmallRound;
         }
     }
 }

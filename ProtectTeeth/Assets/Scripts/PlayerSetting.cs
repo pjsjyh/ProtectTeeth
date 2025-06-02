@@ -5,8 +5,15 @@ using MyGame.ToothInfos;
 using MyGame.GoodList;
 using System;
 
+
+
 public class PlayerSetting : MonoBehaviour
 {
+    public struct roundnum
+    {
+        public int bigRound;
+        public int smallRound;
+    };
     public static PlayerSetting Instance { get; private set; }
     public GoodCollection goodList;
     public static List<GameObject> playerskill; // 현재 장착한 5개의 인벤토리
@@ -14,7 +21,8 @@ public class PlayerSetting : MonoBehaviour
     public static volatile int playerScore = 30;
     public static int bigRound = 0;
     public static int smallRound = 0;
-
+    public static  roundnum MaxRound;
+    public static  roundnum nowRound;
 
     public delegate void ScoreChanged(int newScore);
     public event ScoreChanged OnScoreChanged;

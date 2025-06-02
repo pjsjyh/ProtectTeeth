@@ -6,6 +6,6 @@ public class RoundText : MonoBehaviour
 {
     private void Start()
     {
-        this.GetComponent<TextMeshProUGUI>().text = PlayerSetting.bigRound.ToString() + "-" + PlayerSetting.smallRound.ToString();
+        this.GetComponent<TextMeshProUGUI>().text = PlayerSetting.MaxRound.bigRound.ToString() + "-" + PlayerSetting.MaxRound.smallRound.ToString();
     }
 }

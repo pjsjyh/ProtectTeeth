@@ -3,6 +3,10 @@ using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 public class MouseFollowImage : MonoBehaviour
 {
+    public GameObject LightPrefab;
+    private bool isLampFollowing = false;
+    private GameObject previewLight;
+
     public Tilemap tilemap;
     public Image followImage; // 마우스를 따라다닐 이미지
     private RectTransform followImageRect; // Image의 RectTransform
@@ -16,6 +20,12 @@ public class MouseFollowImage : MonoBehaviour
 
     void Update()
     {
+        if (isLampFollowing && previewLight != null)
+        {
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 0f;
+            previewLight.transform.position = mouseWorldPos;
+        }
         if (isFollowing)
         {
             // 마우스 위치를 따라다니게 설정
@@ -43,9 +53,16 @@ public class MouseFollowImage : MonoBehaviour
 
             // 오브젝트 생성
             SpawnObjectAt(cellWorldPosition);
+            isLampFollowing = false;
+            if (previewLight != null) Destroy(previewLight);
         }
     }
-
+    public void StartLampFollow()
+    {
+        if (previewLight != null) Destroy(previewLight);
+        previewLight = Instantiate(LightPrefab);
+        isLampFollowing = true;
+    }
     public void StartFollow(Button button)
     {
         // 버튼의 이미지를 가져와 따라다니는 이미지로 설정
@@ -53,7 +70,10 @@ public class MouseFollowImage : MonoBehaviour
         int nown = button.GetComponent<CanvasGetInfo>().thisInfo.GetComponent<GoodSetting>().toothinfo.coin;
         Debug.Log(nown+" "+ PlayerSetting.playerScore);
         if (0 > PlayerSetting.playerScore-nown) return;
-
+        if (button.GetComponent<CanvasGetInfo>().thisInfo.GetComponent<GoodSetting>().toothinfo.toothType== MyGame.ToothInfos.ToothEnum.Lamp)
+        {
+            StartLampFollow();
+        }
         Image buttonImage = button.transform.GetChild(0).GetComponent<Image>();
         if (buttonImage != null)
         {
