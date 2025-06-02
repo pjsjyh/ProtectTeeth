@@ -11,7 +11,7 @@
 개발자 1인
 
 #### 실행 영상
-https://www.youtube.com/watch?v=bT7H7SjwhPc
+https://youtu.be/G8Vo-QkZw0g
 
 
 
