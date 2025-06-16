@@ -11,7 +11,7 @@
 개발자 1인
 
 #### 실행 영상
-https://www.youtube.com/watch?v=bT7H7SjwhPc
+https://youtu.be/G8Vo-QkZw0g
 
 
 
@@ -62,6 +62,13 @@ https://www.youtube.com/watch?v=bT7H7SjwhPc
      - 일정 범위 내의 몬스터에게 피해을 입힌다. 방어형 폭탄으로 HP가 0으로 감소하면 폭탄의 효과를 나타낸다.
      - 공격 범위는 코드 내에서 설정.
    - 방어 타입
+    - 램프
+####   -![image](https://github.com/user-attachments/assets/ebc397c3-fad1-4611-941c-ffd3bf4e38f0)
+
+        
+        어두운 밤 라운드 일 때 시야를 확보하기 위한 오브젝트
+        
+        (우측 하단 라이트는 마우스로 클릭 후 이동 중)
 #### 6) 공격 오브젝트 생성
 ####   ![image](https://github.com/user-attachments/assets/40132db5-b1aa-444c-b27f-085faac11a15)
    방어 오브젝트를 마주치면 공격 시작한다. 피격시 색을 깜빡여 피격 효과를 나타낸다.
