@@ -31,7 +31,7 @@ https://youtu.be/G8Vo-QkZw0g
    - 인터페이스, 상속을 활용해 코드 분리 및 유지보수성 향상 [상속을 이용한 공격코드](https://github.com/pjsjyh/ProtectTeeth/blob/master/ProtectTeeth/Assets/Scripts/Game/GoodTeethSetting.cs) [공통 코드](https://github.com/pjsjyh/ProtectTeeth/blob/master/ProtectTeeth/Assets/Scripts/Game/GoodSetting.cs)
    - static을 활용해 데이터 관리
    - 공통 로직 묶어 활용도 향상
-   - 폴더 내부의 이미지를 읽어와 자동으로 atlas로 설정되도록 만들어주는 툴 [atlas 생성] (https://github.com/pjsjyh/ProtectTeeth/blob/master/ProtectTeeth/Assets/Scripts/MakeAtlas.cs)
+   - 폴더 내부의 이미지를 읽어와 자동으로 atlas로 설정되도록 만들어주는 툴 [atlas 생성](https://github.com/pjsjyh/ProtectTeeth/blob/master/ProtectTeeth/Assets/Scripts/MakeAtlas.cs)
 5) 이미지 사용
    - Aseprite를 이용해 직접 이미지 제작
    - sprite sheet로 제작해 메모리 절감
