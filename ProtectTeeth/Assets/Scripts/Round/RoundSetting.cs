@@ -27,7 +27,7 @@ public class RoundSetting : MonoBehaviour
                 var tmp = child.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                 tmp.text = PlayerSetting.bigRound.ToString()+"-"+(PlayerSetting.bigRound+i).ToString();
 
-                if (i > PlayerSetting.smallRound)
+                if (i > PlayerSetting.MaxRound.smallRound)
                 {
                     child.GetComponent<Button>().interactable = false;
 

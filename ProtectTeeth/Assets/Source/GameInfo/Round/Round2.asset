@@ -19,3 +19,4 @@ MonoBehaviour:
     count: 7
   - zombie: {fileID: 11400000, guid: 9f4238cff0b179b408d824bbf5594a2c, type: 2}
     count: 7
+  isNight: 1

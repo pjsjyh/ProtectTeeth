@@ -142,6 +142,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3dcac39220ecf3a4393e9f2a01e6d67e
+    m_Address: Assets/Source/Prefab/Monster/m1_1_0.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: cfa0b9108b491d34d98a9bedb10a3f4b, type: 2}
   m_SchemaSet:

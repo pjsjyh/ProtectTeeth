@@ -6,7 +6,7 @@ namespace MyGame.ZombiesScript
 {
     [Serializable]
     public enum ZombieEnum { purpleVirus, greenVirus, orangeVirus };
-
+    public enum ZombieType { nearAttack, farAttack};
 
     [Serializable]
     public struct ZombieBody
@@ -20,6 +20,7 @@ namespace MyGame.ZombiesScript
     public class Zombie : ScriptableObject
     {
         public ZombieEnum zombieType;
+        public ZombieType zombieAttackType;
         public int zombieLevel;
         public GameObject prefab;
         public ZombieBody zombieBody;

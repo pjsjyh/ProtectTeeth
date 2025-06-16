@@ -11,6 +11,7 @@ public class MonsterSetting : MonoBehaviour, IAttackable
     public Zombie myZombieInfo;
     private Animator animator;
     public float thisHealth;
+    public GameObject attackObj;
 
     private IAttackable target;
     private Coroutine attackRoutine;
@@ -34,7 +35,10 @@ public class MonsterSetting : MonoBehaviour, IAttackable
         // 완전히 파괴되었거나 null이라면 중지
         if (target == null || (object)target == null || targetMono == null)
         {
-            StopAttack();
+            if (myZombieInfo.zombieAttackType != ZombieType.farAttack)
+            {
+                StopAttack();
+            }
             return;
 
         }
@@ -51,7 +55,6 @@ public class MonsterSetting : MonoBehaviour, IAttackable
             StopCoroutine(attackRoutine);
             attackRoutine = null;
         }
-
         isAttacking = false;
         isMoving = true;
         animator.SetBool("isAttack", false);
@@ -71,15 +74,20 @@ public class MonsterSetting : MonoBehaviour, IAttackable
             }
         }
     }
-    void StartAttack()
+    public void StartAttack()
     {
+        Debug.Log("공격 들어옴");
         isMoving = false;
         isAttacking = true;
         animator.SetBool("isWalk", false);
         animator.SetBool("isAttack", true);
 
-        if (attackRoutine == null)
+        if (attackRoutine == null && myZombieInfo.zombieAttackType ==ZombieType.nearAttack)
             attackRoutine = StartCoroutine(AttackLoop());
+        else if(attackRoutine == null && myZombieInfo.zombieAttackType == ZombieType.farAttack)
+        {
+            FarAttackLoop();
+        }
     }
     IEnumerator AttackLoop()
     {
@@ -91,8 +99,20 @@ public class MonsterSetting : MonoBehaviour, IAttackable
 
         StopAttack();
     }
+    private void  FarAttackLoop()
+    {
+        InvokeRepeating("FireProjectile", 0.5f, myZombieInfo.zombieBody.attack);
 
-
+    }
+    private void FireProjectile()
+    {
+        if (attackObj != null)
+        {
+            // Projectile 인스턴스 생성
+            GameObject projectile = Instantiate(attackObj, this.transform.position, this.transform.rotation);
+            projectile.GetComponent<GoodAttack>().damage = myZombieInfo.zombieBody.attack;
+        }
+    }
     public void TakeDamage(float damage)
     {
         thisHealth -= damage;
@@ -118,7 +138,11 @@ public class MonsterSetting : MonoBehaviour, IAttackable
     }
     public void startChage()
     {
-        StartCoroutine(chageColor());
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(chageColor());
+        }
+
 
     }
     public IEnumerator chageColor()

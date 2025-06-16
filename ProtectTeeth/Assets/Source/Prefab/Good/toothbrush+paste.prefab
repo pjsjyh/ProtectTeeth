@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6826019877227098644}
   - component: {fileID: -2568407195506040004}
   - component: {fileID: 2173625356371921930}
-  m_Layer: 0
+  - component: {fileID: -1018895472920760292}
+  m_Layer: 6
   m_Name: toothbrush+paste
   m_TagString: Good
   m_Icon: {fileID: 0}
@@ -118,7 +119,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.29440206, y: 0.01060915}
@@ -150,6 +151,27 @@ MonoBehaviour:
   thisHealth: 15
   attackCollider: {fileID: -2568407195506040004}
   attackPrefab: {fileID: 4712332527422592075, guid: a49e5ce3a5211244bb2b30b45a9279b7, type: 3}
+--- !u!50 &-1018895472920760292
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072423206829442476}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8161151465836384639
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2332411557850775547}
   - component: {fileID: 6624859966199593613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Sensor
   m_Icon: {fileID: 0}
@@ -196,3 +218,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goodSetting: {fileID: 2173625356371921930}
   boxSize: {x: 4, y: 0.6}
+  effect: {fileID: 0}

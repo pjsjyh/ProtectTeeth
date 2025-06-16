@@ -429,6 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeScenename: RoundScene
   sceneAddress: Assets/Scenes/RoundScene.unity
+  isGameBtn: 0
 --- !u!1 &406454915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1462,9 @@ MonoBehaviour:
   - tag: green1
     zombie: {fileID: 11400000, guid: 9f4238cff0b179b408d824bbf5594a2c, type: 2}
     size: 20
+  - tag: orange1
+    zombie: {fileID: 11400000, guid: 4e01413b56b3ba44ebed96e917e37cd7, type: 2}
+    size: 20
 --- !u!4 &1077880709
 Transform:
   m_ObjectHideFlags: 0
@@ -1645,6 +1649,7 @@ MonoBehaviour:
   spawnPoints: []
   poolManager: {fileID: 1077880708}
   aliveZombies: []
+  isNight: 0
 --- !u!4 &1093657014
 Transform:
   m_ObjectHideFlags: 0
